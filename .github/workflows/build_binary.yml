@@ -1,0 +1,46 @@
+name: Build and release the Go binary
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.22
+
+      - name: Build binary
+        run: GOOS=windows GOARCH=amd64 go build -ldflags "-w -s" -o HPDateTimeSetter.exe
+
+      - name: Prepare date-based tag name
+        run: echo "NOW=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: Compiled Go binary for Windows
+          tag_name: "{{ env.NOW }}"
+          draft: false
+          prerelease: false
+
+      - name: Upload Binary
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./HPDateTimeSetter.exe
+          asset_name: HPDateTimeSetter.exe
+          asset_content_type: application/octet-stream
