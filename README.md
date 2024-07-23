@@ -1,5 +1,5 @@
 # SetDateTime Service for older HP printers using SNMP
-This repository concerns the implementation of a Windows background service to set the date and time on a network printer using the SNMP protocol.
+This repository concerns the implementation of a Windows background service to set the date and time on a HP network printer using the SNMP protocol.
 
 Since the old, proprietary HP software solution (including `HP Solution Center`) is EOL and is partly broken, especially for more modern Windows versions, and heavily relies on Adobe Flash (EOL as well), this application replaces the time synchronization part.
 
@@ -17,7 +17,7 @@ The service is started automatically on startup.
 
 ## How to Use
 ### Interactive / Debug / Test Mode
-1. Get the x64 executable file from the release section or compile it by yourself.
+1. Get the x64 executable file from the [release section](https://github.com/j-frei/HPDateTimeSetter/releases/latest) or compile it by yourself.
 
 Compile the go binary for Windows (e.g. on Linux) using:
 ```bash
@@ -34,7 +34,7 @@ GOOS=windows GOARCH=amd64 go build \
 You can stop the binary using CTRL+C.
 
 ### Install
-1. Get the x64 executable file from the release section or compile it by yourself.
+1. Get the x64 executable file from the [release section](https://github.com/j-frei/HPDateTimeSetter/releases/latest) or compile it by yourself.
 
 Compile the go binary for Windows (e.g. on Linux) using:
 ```bash
