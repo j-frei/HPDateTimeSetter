@@ -3,7 +3,7 @@ name: Build and release the Go binary
 on:
   push:
     branches:
-      - mainmaster
+      - main
   pull_request: {}
   workflow_dispatch:
 
