@@ -23,8 +23,7 @@ Compile the go binary for Windows (e.g. on Linux) using:
 ```bash
 GOOS=windows GOARCH=amd64 go build \
     -ldflags "-w -s" \
-    -o HPDateTimeSetter.exe \
-    snmp_setdatetime.go
+    -o HPDateTimeSetter.exe
 ```
 
 2. Then, run the program on Windows, using the IP or hostname of the printer (e.g. `192.168.178.15`):
