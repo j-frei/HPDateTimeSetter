@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           release_name: Compiled Go binary for Windows
-          tag_name: "{{ env.NOW }}"
+          tag_name: "${{ env.NOW }}"
           draft: false
           prerelease: false
 
