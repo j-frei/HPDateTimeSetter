@@ -10,8 +10,9 @@ The old HP printer (`HP Photosmart 2610`) does not have an actual RTC and loses 
 ## Key Contribution
 This repository implements a small Go binary that 
 - can run itself as a background service on Windows,
-- periodically polls / waits for the availability of the network printer (default: every 5 minutes)
+- periodically polls / waits for the availability of the network printer (default: every 5 minutes) on the HTTP TCP port (80)
 - sets the current date and time via SNMP as soon as the printer is available
+
 The service terminates itself after setting the date and time.
 The service is started automatically on startup.
 
@@ -66,6 +67,6 @@ The calls can be generated using the following scripts at:
 - `cli_commands/1_call.py` (Does not work for HP Photosmart 2610)
 - `cli_commands/2_call.py` (Does work for HP Photosmart 2610)
 
-The script only serve for debugging and educational purposes.
+The scripts only serve debugging and educational purposes.
 
 The Go binary avoids the installation of external SNMP tools on Windows and includes the necessary SNMP handling using static linking.
