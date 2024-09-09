@@ -7,6 +7,12 @@ The setting of the correct time is crucial in certain contexts, e.g. for a valid
 
 The old HP printer (`HP Photosmart 2610`) does not have an actual RTC and loses the date/time information after power loss (=pulling the plug).
 
+The HP drivers can be obtained from here:  
+HP All-In-One Bundle Drivers (Mirror from driverscloud.com):  
+- Setup with Network/IP support: https://web.archive.org/web/20240903092738/https://dcdrivers.driverscloud.com/drivers/87a/87aa7654559939c6b957900b520b3309/AIO_CDB_Net_Full_Win_WW_140_408-4.exe
+- Setup without Network/IP support: https://web.archive.org/web/20240903094055/https://dcdrivers.driverscloud.com/drivers/8c4/8c429e9324e45cca61675b551924228f/AIO_CDB_NonNet_Full_Win_WW_130_141.exe
+
+
 ## Key Contribution
 This repository implements a small Go binary that 
 - can run itself as a background service on Windows,
